@@ -1,0 +1,13 @@
+create table booking(serial_no varchar2(10)references Registration,state varchar2(40),place varchar2(40),no_of_days number(2),type_of_package varchar2(40),no_of_adults number(5),no_of_childrens number(5),no_of_senior_citizens number(5),total_members number(10),price_per_person number(10));
+
+
+create table billing(serial_no varchar2(10),name varchar2(40),travel_date date,no_of_days number(2),type_of_package varchar2(40),place varchar2(40),price_of_adults number(10),price_of_childrens number(10),price_of_senior_citizens number(10),total_members number(10),total_price number(10),foreign key(serial_no) references Registration(serial_no));
+
+create table registration(serial_no varchar2(20)primary key,name varchar2(20),Email_id varchar2(20),mobile_no number(10),city varchar2(20),travel_date date,address varchar2(100));
+
+
+create table login(user_id varchar2(20)primary key,password varchar2(20),name varchar2(20),gender varchar2(20),mobile_no number(10));
+
+
+
+insert into login values('ADMIN','jamal','muhsin','male','9738980520');
